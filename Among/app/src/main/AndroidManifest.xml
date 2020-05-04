@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.among">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".UserClient"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <service
+            android:name=".children.map.FCMService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".function.FunctionActivity" />
+        <activity android:name=".login.LoginActivity" />
+
+        <activity android:name=".parents.FamilyChat" />
+        <activity android:name=".parents.Parents02" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".children.map.LocationMap" />
+        <activity android:name=".parents.Parents"/>
+
+        <activity android:name=".testLogin.RegisterActivity"/>
+        <activity android:name=".children.map.familyChat.ChatroomActivity"/>
+        <activity android:name=".children.map.familyChat.MainActivity"/>
+        <activity android:name=".children.map.FCMActivity"/>
+        <activity android:name=".children.childrenActivity" />
+        <activity android:name=".testLogin.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAP8aGgJtBB6H8vvcZ9GHXUyTvcWhKS3FM" />
+    </application>
+
+</manifest>
